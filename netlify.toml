@@ -1,0 +1,13 @@
+[build]
+  base = "."  # Root directory of your project
+  publish = "public"  # Directory to publish after the build. If your app doesn't have a build output folder, leave it as "." (the root folder).
+  command = "npm install"  # Adjust if you have a build process, like if you're using a bundler like Webpack or a frontend framework.
+  
+[build.environment]
+  NODE_VERSION = "20.11.1"  # Specify the Node.js version you want to use (you can change this based on your app's needs).
+
+[[redirects]]
+  from = "/old-path/*"  # Example of redirect rule (optional).
+  to = "/new-path/:splat"
+  status = 301  # Permanent redirect.
+  force = true
