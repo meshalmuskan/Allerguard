@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="pictures/allergies.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <title>AllerGuard</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+          <div class="navbar-left">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/contactform">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="navbar-center">
+            <img src="pictures/allergies.png" alt="Website Logo" class="logo">
+            <span class="website-name">AllerGuard</span>
+            
+          </div>
+          <div class="navbar-right">
+            <a href="/login" target="_blank">
+            <button class="btn" >Login</button>
+          </a>
+          <a href="/signup" target="_blank">
+            <button class="btn" >Get Started</button>
+            </a>
+          </div>
+        </nav>
+      
+        <div class="background-image">
+          <div class="content-left">
+            <h1>Track, Manage, and <br> Breathe Easy</h1>
+            <hr>
+            <p>Easily log symptoms, track patterns, and get <br>personalized insights.</p>
+            <a href="/signup">
+              <button>Get Started    <i class="bi bi-arrow-right"></i></button></a>
+
+          </div>
+          <div class="content-right">
+            <img src="pictures/antihistamines.png" alt="Right Side Image" class="right-image">
+          </div>
+        </div>
+      
+        <div class="content">
+          <h2>Welcome To Our Website </h2>
+          <h3>Ready To track your  Allergies?</h3>
+          <a href="/profile" target="_blank">
+            <button >Log your Symptoms</button>
+          </a>
+          
+        </div>
+      </div>
+      <div class="products-section">
+        <h2>🛒 Our Products</h2>
+        <div class="products-grid">
+            <% products.forEach(product => { %>
+                <div class="product-card">
+                    <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                    <h3><%= product.name %></h3>
+                    <p><%= product.description %></p>
+                    <p><strong>Price:</strong> $<%= product.price %></p>
+    
+                    <!-- Change the button to a link that redirects to the external website -->
+                    <a href="<%= product.buyLink %>" class="btn" target="_blank">Buy Now </a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    
+    </div>
+    
+      <div class="feature-card" id="allergy_info">
+        <h3>💾 Allergy Database</h3>
+        <div class="allergy_table">
+          <h4>Learn More About Common Allergens and How to Avoid Them</h4>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Allergen</th>
+                      <th>Source</th>
+                      <th>How to Avoid</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>Pollen</td>
+                      <td>Trees, grasses, and weeds</td>
+                      <td>Stay indoors during peak pollen seasons, keep windows closed, use air filters.</td>
+                  </tr>
+                  <tr>
+                      <td>Dust Mites</td>
+                      <td>Household dust</td>
+                      <td>Wash bedding in hot water, use dust mite-proof covers, vacuum regularly.</td>
+                  </tr>
+                  <tr>
+                      <td>Pet Dander</td>
+                      <td>Skin flakes, saliva, and urine of animals</td>
+                      <td>Keep pets out of bedrooms, bathe pets regularly, use HEPA filters.</td>
+                  </tr>
+                  <tr>
+                      <td>Mold</td>
+                      <td>Damp areas such as bathrooms and basements</td>
+                      <td>Reduce indoor humidity, fix leaks, clean moldy surfaces with disinfectants.</td>
+                  </tr>
+                  <tr>
+                      <td>Food Allergens</td>
+                      <td>Peanuts, shellfish, dairy, etc.</td>
+                      <td>Read food labels, avoid cross-contamination, carry emergency medication.</td>
+                  </tr>
+                  <tr>
+                      <td>Insect Stings</td>
+                      <td>Bees, wasps, fire ants</td>
+                      <td>Avoid areas with nests, wear protective clothing, carry epinephrine if allergic.</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      </div>
+      <div class="feature-card">
+        
+        <h3>📋 Dashboard</h3>
+        <p>Visualize your symptoms over time with clear charts.</p>
+        <img src="pictures/chart.png" alt="Dashboard">
+      </div>
+      
+      <div class="feature-card">
+        <h3>💊 Symptom Logging</h3>
+        <p>Track your daily allergy symptoms easily.</p>
+        <img src="pictures/allergy tracker.png" alt="Symptom Tracker">
+      </div>
+      <div class="testimonial">
+        <h1>Leave a Review</h1>
+      
+        <!-- reviews section in home.ejs or any other page where reviews are displayed -->
+<div class="reviews-section">
+  <h2>Customer Reviews</h2>
+  <ul id="reviews-list">
+    <% reviews.forEach(review => { %>
+      <div class="testimonial1">
+        <p>"<%= review.comment %>" - <b><%= review.username %></b></p>
+      </div>
+      <hr>
+    <% }) %>
+  </ul>
+</div>
+
+<div class="comment-form">
+  <h2>Add Your Comment</h2>
+  <form action="/reviews" method="POST">
+    <label for="username">Name:</label>
+    <input type="text" id="username" name="username" required>
+  
+    <label for="comment">Comment:</label>
+    <textarea id="comment" name="comment" rows="5" required></textarea>
+  
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<!-- footer -->
+      <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>Allergy Tracker</h2>
+                <p>Allergy Research and Tracking Program</p>
+            </div>
+
+            <div class="footer-middle">
+                <h3>Quick Links</h3>
+                <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about">About</a></li>
+                    <li><a href="/signup">Track Allergies</a></li>
+                    <li><a href="#allergy_info">Allergy Information</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contactform">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h3>Policies & Reports</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="/services">Terms of Service</a></li>
+                    <li><a href="#">Security Information</a></li>
+                    <li><a href="/contactform">Report a Problem</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Allergy Tracker © 2024 - All Rights Reserved</p>
+        </div>
+    </footer>
+      <button id="theme-toggle">Toggle Theme</button>
+      <script>
+        const themeToggleButton = document.getElementById('theme-toggle');
+themeToggleButton.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+});
+      </script>
+
+</body>
+</html>

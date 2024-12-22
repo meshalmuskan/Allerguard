@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= product.name %> - Product Details</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="pictures/allergies.png">
+  <link rel="stylesheet" href="/productdetails.css"> <!-- Adjust path to your CSS -->
+</head>
+<body>
+  <header>
+    <h1>Product Details</h1>
+    <a href="/products" class="back-btn">← Back to Product List</a>
+  </header>
+
+  <main class="product-details">
+    <section class="product-info">
+      <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
+      <h2><%= product.name %></h2>
+      <p><strong>Description:</strong> <%= product.description %></p>
+      <p><strong>Price:</strong> $<%= product.price.toFixed(2) %></p>
+      <p><strong>Buy Link:</strong> <%= product.buyLink %></p>
+      <p><strong>Created At:</strong> <%= product.createdAt.toDateString() %></p>
+    </section>
+
+   
+  </main>
+</body>
+</html>
