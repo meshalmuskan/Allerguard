@@ -7,7 +7,6 @@
   NODE_VERSION = "20.11.1"  # Specify the Node.js version you want to use (you can change this based on your app's needs).
 
 [[redirects]]
-  from = "/old-path/*"  # Example of redirect rule (optional).
-  to = "/new-path/:splat"
-  status = 301  # Permanent redirect.
-  force = true
+  from = "/*"  # Redirect all requests to index.html
+  to = "/index.html"
+  status = 200  # For static sites (adjust if necessary for routes)
